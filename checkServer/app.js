@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//var usersRouter = require('./routes/users'); 안쓰니까 주석처리
 
+var userRouter=require('./routes/user/index')//user router 선언
+var storeRouter=require('./routes/store/index')//store router 선언
+var cardRouter=require('./routes/card/index')//card router 선언
+//var cardRouter=require('./routes/card/index')
 var app = express();
 
 // view engine setup
@@ -20,7 +24,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
+app.use('/user', userRouter);// http:3000/user 이 주소 이름으로 userRouter 를 사용할 것이다.
+app.use('/store', storeRouter);// http:3000/store 이 주소 이름으로 storeRouter 를 사용할 것이다.
+app.use('/card', cardRouter);// http:3000/store 이 주소 이름으로 cardRouter 를 사용할 것이다.
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
