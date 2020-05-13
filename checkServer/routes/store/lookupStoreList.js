@@ -25,7 +25,6 @@ router.get('/', async (req, res) => {
   
   const storeSelectResult=await db.queryParam_Parse(storeSelectQuery);
 
-  console.log('여기까지2');
   //result를 받고 success/ fail 여부 안드로이드한테 res로 응답
   if(!storeSelectResult){ //실패했을 경우
       res.status(200).send(utils.successFalse(statusCode.INTERNAL_SERVER_ERROR, responseMessage.STORELIST_ALL_FAIL));
