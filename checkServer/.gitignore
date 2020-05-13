@@ -1,9 +1,10 @@
 
 # Created by https://www.gitignore.io/api/node,windows,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,windows,visualstudiocode
+
 #code 
-config
-module
+config/
+module/
 
 ### Node ###
 # Logs
